@@ -1,0 +1,19 @@
+<div>
+<h1>Mi pagina para buscar elementos</h1>
+<label>Digite aqui el elemento a buscar:</label>
+<input #name>
+<button (click)="getItems(name.value); name.value=''">Enviar</button>
+
+</div>
+
+<div *ngIf="items">
+  <h2>Lista de Articulos</h2>
+  <ul class="list-items">
+    <li *ngFor="let item of items">
+      <div class="id"><label>Id: {{item.id}}</label></div>
+      <div class="title"><label>Tilte: {{item.title}}</label></div>
+      <div class="price"><label>Price: {{item.price}}</label></div>
+      <div class="thumbnail"><img src="{{item.thumbnail}}"></div>
+  </li>
+  </ul>
+</div>
